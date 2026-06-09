@@ -1,119 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Sweet 16!</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Happy Sweet 16!</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
-    
-    <div class="stars" id="stars-container"></div>
-    
-    <div class="hero">
-        <h1>Sweet 16</h1>
-        
-        <div class="cake-container" id="cake">
-            <div class="tier tier-3">
-                <div class="candles">
-                    <div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div>
-                    <div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div>
-                    <div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div>
-                </div>
-            </div>
-            <div class="tier tier-2">
-                <div class="drip-container">
-                    <div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div>
-                </div>
-                <div class="sprinkle s1"></div><div class="sprinkle s2"></div><div class="sprinkle s3"></div>
-            </div>
-            <div class="tier tier-1">
-                <div class="drip-container">
-                    <div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div>
-                </div>
-                <div class="sprinkle s4"></div><div class="sprinkle s5"></div><div class="sprinkle s6"></div><div class="sprinkle s7"></div>
-            </div>
-        </div>
-
-        <button class="btn" id="blow-btn">Blow out the candles</button>
-        <div class="wish-text" id="wish-text">Make a wish! 🎊</div>
-    </div>
-    
-    <div class="content-section" id="main-content">
-        <div class="glass-card observer-item">
-            <h2>Happy Birthday!</h2>
-            <p>Sixteen years of you being the absolute best sister anyone could ask for. I wanted to make something special just for you to mark this milestone.</p>
-            <p>Keep shining, keep being yourself, and remember that I am always in your corner cheering you on. Let's make this year your best one yet.</p>
-        </div>
-
-        <h2 class="observer-item" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: #ffd700; opacity: 0; transform: translateY(40px); transition: all 1s ease;">Captured Moments</h2>
-        
-        <div class="photo-board observer-item">
-            
-            <div class="polaroid-item" data-message="[Type your note for Picture 1 here. Example: Look at this giant crab!]">
-                <div class="pin"></div>
-                <img src="pics (1).jpeg" alt="Memory 1">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 2 here. Example: That cute pink hat!]">
-                <div class="pin"></div>
-                <img src="pics (2).jpeg" alt="Memory 2">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 3 here. Example: Chilling with dad.]">
-                <div class="pin"></div>
-                <img src="pics (3).jpeg" alt="Memory 3">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 4 here. Example: Pool day!]">
-                <div class="pin"></div>
-                <img src="pics (4).jpeg" alt="Memory 4">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 5 here]">
-                <div class="pin"></div>
-                <img src="pics (5).jpeg" alt="Memory 5">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 6 here]">
-                <div class="pin"></div>
-                <img src="pics (6).jpeg" alt="Memory 6">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 7 here. Example: Conquering the mountain!]">
-                <div class="pin"></div>
-                <img src="pics (7).jpeg" alt="Memory 7">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 8 here. Example: Waterpark fun.]">
-                <div class="pin"></div>
-                <img src="pics (8).jpeg" alt="Memory 8">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 9 here]">
-                <div class="pin"></div>
-                <img src="pics (9).jpeg" alt="Memory 9">
-            </div>
-
-            <div class="polaroid-item" data-message="[Type your note for Picture 10 here. Example: Look how beautiful you are now.]">
-                <div class="pin"></div>
-                <img src="pics (10).jpeg" alt="Memory 10">
-            </div>
-
-        </div>
-    </div>
-    
-    <div class="modal" id="image-modal">
-        <span class="close-modal" id="close-modal">&times;</span>
-        <div class="modal-content">
-            <img id="modal-img" src="" alt="Memory Full">
-            <p class="modal-text" id="modal-text"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<div id="loader"><div class="spinner"></div></div>
+<div class="stars" id="stars-container"></div>
+<div class="hero">
+<h1>Sweet 16</h1>
+<div class="cake-container" id="cake">
+<div class="tier tier-3"><div class="candles"><div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div><div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div><div class="candle-wrapper"><div class="candle"></div><div class="flame"></div><div class="smoke"></div></div></div></div>
+<div class="tier tier-2"><div class="drip-container"><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div></div><div class="sprinkle s1"></div><div class="sprinkle s2"></div><div class="sprinkle s3"></div></div>
+<div class="tier tier-1"><div class="drip-container"><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div><div class="drip"></div></div><div class="sprinkle s4"></div><div class="sprinkle s5"></div><div class="sprinkle s6"></div><div class="sprinkle s7"></div></div>
+</div>
+<button class="btn" id="blow-btn">Blow out the candles</button>
+<div class="wish-text" id="wish-text">Make a wish! 🎊</div>
+</div>
+<div class="content-section" id="main-content">
+<div class="glass-card observer-item">
+<h2>Happy Birthday!</h2>
+<p>Sixteen years of you being the absolute best sister anyone could ask for. I wanted to make something special just for you to mark this milestone.</p>
+<p>Keep shining, keep being yourself, and remember that I am always in your corner cheering you on. Let's make this year your best one yet.</p>
+</div>
+<h2 class="observer-item" style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:#ffd700;opacity:0;transform:translateY(40px);transition:all 1s ease">Captured Moments</h2>
+<div class="photo-board observer-item">
+<div class="polaroid-item" data-message="[Type your note for Picture 1 here]"><div class="pin"></div><img src="pics (1).jpeg" alt="Memory 1"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 2 here]"><div class="pin"></div><img src="pics (2).jpeg" alt="Memory 2"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 3 here]"><div class="pin"></div><img src="pics (3).jpeg" alt="Memory 3"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 4 here]"><div class="pin"></div><img src="pics (4).jpeg" alt="Memory 4"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 5 here]"><div class="pin"></div><img src="pics (5).jpeg" alt="Memory 5"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 6 here]"><div class="pin"></div><img src="pics (6).jpeg" alt="Memory 6"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 7 here]"><div class="pin"></div><img src="pics (7).jpeg" alt="Memory 7"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 8 here]"><div class="pin"></div><img src="pics (8).jpeg" alt="Memory 8"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 9 here]"><div class="pin"></div><img src="pics (9).jpeg" alt="Memory 9"></div>
+<div class="polaroid-item" data-message="[Type your note for Picture 10 here]"><div class="pin"></div><img src="pics (10).jpeg" alt="Memory 10"></div>
+</div>
+</div>
+<div class="modal" id="image-modal">
+<span class="close-modal" id="close-modal">&times;</span>
+<div class="modal-content"><img id="modal-img" src="" alt="Memory Full"><p class="modal-text" id="modal-text"></p></div>
+</div>
+<audio id="bg-music" loop><source src="Piano.m4a" type="audio/mp4"></audio>
+<script src="script.js"></script>
 </body>
 </html>

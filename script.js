@@ -1,133 +1,19 @@
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 800);
-    }, 800);
-    
-    createStars();
-});
-
-function createStars() {
-    const container = document.getElementById('stars-container');
-    const starCount = 100;
-    
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        
-        const size = Math.random() * 3 + 1;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + 'vw';
-        star.style.top = Math.random() * 100 + 'vh';
-        star.style.animationDuration = (Math.random() * 3 + 1) + 's';
-        star.style.animationDelay = Math.random() * 2 + 's';
-        
-        container.appendChild(star);
-    }
-}
-
-const btn = document.getElementById('blow-btn');
-const cake = document.getElementById('cake');
-const wishText = document.getElementById('wish-text');
-
-btn.addEventListener('click', function() {
-    cake.classList.add('blown');
-    
-    btn.style.opacity = '0';
-    btn.style.pointerEvents = 'none';
-    btn.style.position = 'absolute';
-    
-    wishText.classList.add('show');
-    
-    fireConfetti();
-    
-    setTimeout(() => {
-        const content = document.getElementById('main-content');
-        content.scrollIntoView({ behavior: 'smooth' });
-    }, 2500);
-});
-
-function fireConfetti() {
-    const colors = ['#ffb6c1', '#ffd700', '#fff5f7', '#c8709a'];
-    const amount = 150;
-    
-    for(let i = 0; i < amount; i++) {
-        const conf = document.createElement('div');
-        conf.className = 'confetti-piece';
-        
-        conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        conf.style.left = Math.random() * 100 + 'vw';
-        
-        if (Math.random() > 0.5) {
-            conf.style.borderRadius = '50%';
-            conf.style.width = '8px';
-            conf.style.height = '8px';
-        }
-        
-        const duration = Math.random() * 3 + 2;
-        const delay = Math.random() * 0.5;
-        
-        conf.style.animationDuration = duration + 's';
-        conf.style.animationDelay = delay + 's';
-        
-        document.body.appendChild(conf);
-        
-        setTimeout(() => {
-            conf.remove();
-        }, (duration + delay) * 1000);
-    }
-}
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            if(entry.target.tagName === 'H2') {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.observer-item').forEach(item => {
-    observer.observe(item);
-});
-
-const modal = document.getElementById('image-modal');
-const modalImg = document.getElementById('modal-img');
-const modalText = document.getElementById('modal-text');
-const closeModalBtn = document.getElementById('close-modal');
-
-document.querySelectorAll('.polaroid-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const imgElement = item.querySelector('img');
-        const message = item.getAttribute('data-message');
-        
-        modalImg.src = imgElement.src;
-        modalText.textContent = message;
-        
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
+window.addEventListener("load",()=>{setTimeout(()=>{const e=document.getElementById("loader");e.style.opacity="0";setTimeout(()=>(e.style.display="none"),800)},800);createStars()});
+let allStars=[];
+function createStars(){const e=document.getElementById("stars-container");for(let t=0;t<100;t++){const t=document.createElement("div");t.classList.add("star");const a=Math.random()*3+1;t.style.width=a+"px";t.style.height=a+"px";t.style.left=Math.random()*100+"vw";t.style.top=Math.random()*100+"vh";t.style.animationDuration=Math.random()*3+1+"s";t.style.animationDelay=Math.random()*2+"s";e.appendChild(t);allStars.push(t)}}
+const btn=document.getElementById("blow-btn"),cake=document.getElementById("cake"),wishText=document.getElementById("wish-text"),bgMusic=document.getElementById("bg-music");
+btn.addEventListener("click",function(){cake.classList.add("blown");btn.style.opacity="0";btn.style.pointerEvents="none";btn.style.position="absolute";wishText.classList.add("show");bgMusic.volume=0.3;bgMusic.play().catch((e)=>{console.log("Audio playback failed:",e)});fireConfetti();setTimeout(()=>{document.getElementById("main-content").scrollIntoView({behavior:"smooth"})},2500)});
+function fireConfetti(){const e=["#ffb6c1","#ffd700","#fff5f7","#c8709a"];for(let t=0;t<150;t++){const t=document.createElement("div");t.className="confetti-piece";t.style.backgroundColor=e[Math.floor(Math.random()*e.length)];t.style.left=Math.random()*100+"vw";if(Math.random()>0.5){t.style.borderRadius="50%";t.style.width="8px";t.style.height="8px"}const a=Math.random()*3+2,n=Math.random()*0.5;t.style.animationDuration=a+"s";t.style.animationDelay=n+"s";document.body.appendChild(t);setTimeout(()=>{t.remove()},(a+n)*1000)}}
+const observerOptions={threshold:0.1,rootMargin:"0px 0px -50px 0px"},observer=new IntersectionObserver((e)=>{e.forEach((e)=>{if(e.isIntersecting){e.target.classList.add("show");if(e.target.tagName==="H2"){e.target.style.opacity="1";e.target.style.transform="translateY(0)"}observer.unobserve(e.target)}})},observerOptions);
+document.querySelectorAll(".observer-item").forEach((e)=>{observer.observe(e)});
+const polaroids=document.querySelectorAll(".polaroid-item"),board=document.querySelector(".photo-board");
+board.style.setProperty("--light-trail-x","0px");
+const slideOptions={threshold:0.8,root:board},slideObserver=new IntersectionObserver((e)=>{e.forEach((e)=>{const t=e.target;if(e.isIntersecting){t.classList.add("active-memory");updateLightAndStars(t)}else{t.classList.remove("active-memory")}})},slideOptions);
+polaroids.forEach((e)=>{slideObserver.observe(e)});
+function updateLightAndStars(e){board.style.setProperty("--light-trail-x",e.offsetLeft-board.scrollLeft+e.offsetWidth/2+"px");clusterStars(e)}
+polaroids.forEach((e)=>{e.addEventListener("mousemove",(t)=>{if(window.innerWidth<768)return;const a=e.getBoundingClientRect(),n=t.clientX-a.left,o=t.clientY-a.top,r=a.width/2,s=a.height/2,c=((o-s)/s)*-5,i=((n-r)/r)*5;e.style.transform=`rotateX(${c}deg) rotateY(${i}deg) scale(1.05)`});e.addEventListener("mouseleave",()=>{e.style.transform="rotateX(0deg) rotateY(0deg) scale(1.05)"})});
+function clusterStars(e){const t=e.getBoundingClientRect(),a=t.left+t.width/2,n=t.top+t.height/2;for(let e=0;e<20;e++){const e=allStars[Math.floor(Math.random()*allStars.length)],t=a+(Math.random()-0.5)*150,o=n+(Math.random()-0.5)*150;e.style.transition="all 1.5s cubic-bezier(0.16, 1, 0.3, 1)";e.style.left=t+"px";e.style.top=o+"px"}}
+const modal=document.getElementById("image-modal"),modalImg=document.getElementById("modal-img"),modalText=document.getElementById("modal-text"),closeModalBtn=document.getElementById("close-modal");
+document.querySelectorAll(".polaroid-item").forEach((e)=>{e.addEventListener("click",()=>{modalImg.src=e.querySelector("img").src;modalText.textContent=e.getAttribute("data-message");modal.classList.add("active");document.body.style.overflow="hidden"})});
+closeModalBtn.addEventListener("click",()=>{modal.classList.remove("active");document.body.style.overflow="auto"});
+modal.addEventListener("click",(e)=>{if(e.target===modal){modal.classList.remove("active");document.body.style.overflow="auto"}});
